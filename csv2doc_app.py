@@ -60,7 +60,7 @@ def ensure_data_dir_exists():
 
 # Ensure the data directory exists
 ensure_data_dir_exists()
-query_params = st.experimental_get_query_params()
+query_params = st.query_params
 
 # User management functions
 def get_user_id():
@@ -567,8 +567,7 @@ user_id = get_user_id()
 
 col_img, col_body = st.columns([1, 10])      # adjust ratios to your liking
 if float_image_path and os.path.exists(float_image_path):
-    col_img.image(float_image_path, use_column_width=False, width=150)
-    st.info(f"float_image_path = {float_image_path}")
+    col_img.image(float_image_path, use_container_width=False, width=150)
 else:
     st.warning(f"Image not found at {float_image_path}, using placeholder.")
 # col_img.image(float_image_path, use_column_width=True, caption="CSV to Document Converter", width=150)
@@ -581,6 +580,7 @@ with col_body:
     with col1:
         uploaded_file = st.file_uploader("Choose a CSV file", type="csv", key="upload")
     with col2:
+        st.write("<br>", unsafe_allow_html=True)
         load_example = st.button("Load Example: Emojis.csv 😃")
 
     # Handle example file loading
