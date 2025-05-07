@@ -1,0 +1,10 @@
+streamlit>=1.22.0
+pytest>=7.3.1
+requests>=2.28.0
+beautifulsoup4>=4.11.0
+pandas>=1.4.0
+Pillow>=9.0.0
+extra-streamlit-components>=0.1.0
+docx>=0.2.4
+python-docx~=1.1.2
+cssutils~=2.11.1
